@@ -90,7 +90,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "float",
+    type: "double",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -106,7 +106,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "int",
+    type: "integer",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -122,7 +122,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "float",
+    type: "double",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -138,7 +138,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "float",
+    type: "double",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -154,7 +154,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "float",
+    type: "double",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -170,7 +170,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "float",
+    type: "double",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -186,7 +186,7 @@ var properties = [{
     sortable: true
   },
   filter: {
-    type: "float",
+    type: "double",
     input: "checkbox",
     vertical: true,
     multiple: true,
