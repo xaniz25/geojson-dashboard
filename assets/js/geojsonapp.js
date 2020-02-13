@@ -530,9 +530,9 @@ function switchView(view) {
     $("#view").html("Split View");
     location.hash = "#split";
     $("#table-container").show();
-    $("#table-container").css("height", "55%");
+    $("#table-container").css("height", "30%");
     $("#map-container").show();
-    $("#map-container").css("height", "45%");
+    $("#map-container").css("height", "70%");
     $(window).resize();
     if (map) {
       map.invalidateSize();
