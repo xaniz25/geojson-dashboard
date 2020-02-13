@@ -649,7 +649,3 @@ $("#download-pdf-btn").click(function() {
   $(".navbar-collapse.in").collapse("hide");
   return false;
 });
-
-$("#chartModal").on("shown.bs.modal", function (e) {
-  drawCharts();
-});
