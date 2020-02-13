@@ -289,17 +289,8 @@ function buildConfig() {
 }
 
 // Basemap Layers
-var mapboxOSM = L.tileLayer("https://{s}.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZnVsY3J1bSIsImEiOiJjaXI1MHZnNGcwMW41ZnhucjNkOTB1cncwIn0.4ZADnELXGBXsN_RxnPK3Sw", {
-  maxZoom: 19,
-  subdomains: ["a", "b", "c", "d"],
-  attribution: 'Basemap <a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox © OpenStreetMap</a>'
-});
-
-var mapboxSat = L.tileLayer("https://{s}.tiles.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZnVsY3J1bSIsImEiOiJjaXI1MHZnNGcwMW41ZnhucjNkOTB1cncwIn0.4ZADnELXGBXsN_RxnPK3Sw", {
-  maxZoom: 19,
-  subdomains: ["a", "b", "c", "d"],
-  attribution: 'Basemap <a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox © OpenStreetMap</a>'
-});
+var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 20, maxNativeZoom:19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 
 var highlightLayer = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
@@ -383,7 +374,7 @@ $.getJSON(config.geojson, function (data) {
 });
 
 var map = L.map("map", {
-  layers: [mapboxOSM, featureLayer, highlightLayer]
+  layers: [OpenStreetMap_Mapnik, featureLayer, highlightLayer]
 }).fitWorld();
 
 // ESRI geocoder
@@ -415,9 +406,7 @@ if (document.body.clientWidth <= 767) {
   isCollapsed = false;
 }
 var baseLayers = {
-  "Street Map": mapboxOSM,
-  "Aerial Imagery": mapboxSat
-};
+  "Street Map": OpenStreetMap_Mapnik};
 var overlayLayers = {
   "<span id='layer-name'>GeoJSON Layer</span>": featureLayer
 };
