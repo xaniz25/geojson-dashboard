@@ -1,5 +1,5 @@
 var config = {
-  geojson: "https://geodev.lorrnel.com:8084/geoserver/sdv_test_dev/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=sdv_test_dev%3Abas_grd_ab_ats_ascm&maxFeatures=50&outputFormat=application%2Fjson",
+  geojson: "https://geodev.lorrnel.com:8084/geoserver/sdv_test_dev/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=sdv_test_dev%3Abas_grd_ab_ats_ascm&maxFeatures=100&outputFormat=application%2Fjson",
   title: "ATS",
   layerName: "ATS",
   hoverProperty: "ascm_num",
