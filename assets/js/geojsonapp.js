@@ -1,18 +1,214 @@
+//var config = {
+//  geojson: "https://geodev.lorrnel.com:8084/geoserver/sdv_test_dev/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=sdv_test_dev%3Abas_grd_ab_ats_ascm&maxFeatures=100&outputFormat=application%2Fjson",
+//  title: "ATS",
+//  layerName: "ATS",
+//  hoverProperty: "ascm_num",
+//  sortProperty: "name",
+//  sortOrder: "asc"
+//};
+//
+//var properties = [{
+//  value: "objectid",
+//  label: "objectid",
+//  table: {
+//    visible: false,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "integer"
+//  },
+//  info: false
+//},
+//{
+//  value: "ascm_num",
+//  label: "ascm_num",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "integer",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},{
+//  value: "tablet_mk",
+//  label: "tablet_mk",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "string",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "condition",
+//  label: "condition",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "string",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "card_type",
+//  label: "card_type",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "string",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "elevation",
+//  label: "elevation",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "double",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "utm_mer",
+//  label: "utm_mer",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "integer",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "utm_cf",
+//  label: "utm_cf",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "double",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "utm_north",
+//  label: "utm_north",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "double",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "utm_east",
+//  label: "utm_east",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "double",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "lat_dd",
+//  label: "lat_dd",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "double",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//},
+//{
+//  value: "long_dd",
+//  label: "long_dd",
+//  table: {
+//    visible: true,
+//    sortable: true
+//  },
+//  filter: {
+//    type: "double",
+//    input: "checkbox",
+//    vertical: true,
+//    multiple: true,
+//    operators: ["in", "not_in", "equal", "not_equal"],
+//    values: []
+//  }
+//}];
+
 var config = {
-  geojson: "https://geodev.lorrnel.com:8084/geoserver/sdv_test_dev/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=sdv_test_dev%3Abas_grd_ab_ats_ascm&maxFeatures=100&outputFormat=application%2Fjson",
-  title: "ATS",
-  layerName: "ATS",
-  hoverProperty: "ascm_num",
-  sortProperty: "name",
+  geojson: "https://geoserver.lorrnel.com:8084/geoserver/alpac/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=alpac%3Av_asmt_did_weed&outputFormat=application%2Fjson",
+  title: "Weed Infestation",
+  layerName: "Weed Infestation",
+  sortProperty: "disp_num",
   sortOrder: "asc"
 };
 
 var properties = [{
-  value: "objectid",
-  label: "objectid",
+  value: "id",
+  label: "id",
   table: {
     visible: false,
-    sortable: true
+    sortable: false
   },
   filter: {
     type: "integer"
@@ -20,14 +216,14 @@ var properties = [{
   info: false
 },
 {
-  value: "ascm_num",
-  label: "ascm_num",
+  value: "disp_num",
+  label: "Disposition Number",
   table: {
     visible: true,
     sortable: true
   },
   filter: {
-    type: "integer",
+    type: "string",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -35,8 +231,8 @@ var properties = [{
     values: []
   }
 },{
-  value: "tablet_mk",
-  label: "tablet_mk",
+  value: "Disosition_Type",
+  label: "Disposition Type",
   table: {
     visible: true,
     sortable: true
@@ -51,8 +247,8 @@ var properties = [{
   }
 },
 {
-  value: "condition",
-  label: "condition",
+  value: "DID_Status",
+  label: "Status",
   table: {
     visible: true,
     sortable: true
@@ -67,8 +263,72 @@ var properties = [{
   }
 },
 {
-  value: "card_type",
-  label: "card_type",
+  value: "Letter_Of_Authority_Date",
+  label: "Letter Of Authority Date",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "date",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},
+{
+  value: "Effective_Date",
+  label: "Effective Date",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "date",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},
+{
+  value: "Expiration_Date",
+  label: "Expiration Date",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "date",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},
+{
+  value: "Renewal_Date",
+  label: "Renewal Date",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "date",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},
+{
+  value: "Source_Document",
+  label: "Source Document",
   table: {
     visible: true,
     sortable: true
@@ -83,14 +343,14 @@ var properties = [{
   }
 },
 {
-  value: "elevation",
-  label: "elevation",
+  value: "Plan_Number",
+  label: "Plan",
   table: {
     visible: true,
     sortable: true
   },
   filter: {
-    type: "double",
+    type: "string",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -99,8 +359,40 @@ var properties = [{
   }
 },
 {
-  value: "utm_mer",
-  label: "utm_mer",
+  value: "Purpose",
+  label: "Purpose",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},
+{
+  value: "Purpose_Description",
+  label: "Purpose Description",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},             
+{
+  value: "Record_Count",
+  label: "Weed Record Count",
   table: {
     visible: true,
     sortable: true
@@ -114,15 +406,49 @@ var properties = [{
     values: []
   }
 },
+
 {
-  value: "utm_cf",
-  label: "utm_cf",
+  value: "Infestation_Levels",
+  label: "Infestation Levels",
   table: {
     visible: true,
     sortable: true
   },
   filter: {
-    type: "double",
+    type: "string",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},
+
+{
+  value: "Maximum_Infestation",
+  label: "Maximum Infestation",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "string",
+    input: "checkbox",
+    vertical: true,
+    multiple: true,
+    operators: ["in", "not_in", "equal", "not_equal"],
+    values: []
+  }
+},             
+{
+  value: "Report_URL",
+  label: "Report",
+  table: {
+    visible: true,
+    sortable: true
+  },
+  filter: {
+    type: "string",
     input: "checkbox",
     vertical: true,
     multiple: true,
@@ -131,69 +457,22 @@ var properties = [{
   }
 },
 {
-  value: "utm_north",
-  label: "utm_north",
+  value: "Image_URL",
+  label: "Image",
   table: {
     visible: true,
     sortable: true
   },
   filter: {
-    type: "double",
+    type: "string",
     input: "checkbox",
     vertical: true,
     multiple: true,
     operators: ["in", "not_in", "equal", "not_equal"],
     values: []
   }
-},
-{
-  value: "utm_east",
-  label: "utm_east",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "double",
-    input: "checkbox",
-    vertical: true,
-    multiple: true,
-    operators: ["in", "not_in", "equal", "not_equal"],
-    values: []
-  }
-},
-{
-  value: "lat_dd",
-  label: "lat_dd",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "double",
-    input: "checkbox",
-    vertical: true,
-    multiple: true,
-    operators: ["in", "not_in", "equal", "not_equal"],
-    values: []
-  }
-},
-{
-  value: "long_dd",
-  label: "long_dd",
-  table: {
-    visible: true,
-    sortable: true
-  },
-  filter: {
-    type: "double",
-    input: "checkbox",
-    vertical: true,
-    multiple: true,
-    operators: ["in", "not_in", "equal", "not_equal"],
-    values: []
-  }
-}];
+}           
+];
 
 $(function() {
   $(".title").html(config.title);
