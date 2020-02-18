@@ -250,7 +250,7 @@ var properties = [{
   value: "DID_Status",
   label: "Status",
   table: {
-    visible: true,
+    visible: false,
     sortable: true
   },
   filter: {
@@ -571,6 +571,25 @@ function buildConfig() {
 var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 20, maxNativeZoom:19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'});
 
+function subteStyleWeed1(feature) {
+  var colorToUse;
+  var curF = feature.properties.Maximum_Infestation;
+
+  if (curF === "High") colorToUse = "#ff1a1a";
+  else if (curF === "Moderate") colorToUse = "#ffa31a";
+  else if (curF === "Low") colorToUse = "#8cff1a";
+  else colorToUse = "#d9d9d9";
+
+  return {
+    "color": colorToUse,
+    "weight": 1,
+    "opacity": 1,
+    "fillColor": colorToUse,
+    "fillOpacity": 0.7
+
+  };
+}
+
 var highlightLayer = L.geoJson(null, {
   pointToLayer: function (feature, latlng) {
     return L.circleMarker(latlng, {
@@ -599,11 +618,7 @@ var featureLayer = L.geoJson(null, {
   filter: function(feature, layer) {
     return feature.geometry.coordinates[0] !== 0 && feature.geometry.coordinates[1] !== 0;
   },
-  /*style: function (feature) {
-    return {
-      color: feature.properties.color
-    };
-  },*/
+  style: subteStyleWeed1,
   pointToLayer: function (feature, latlng) {
     if (feature.properties && feature.properties["marker-color"]) {
       markerColor = feature.properties["marker-color"];
