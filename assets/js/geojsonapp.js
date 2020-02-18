@@ -553,7 +553,8 @@ function buildConfig() {
     if (value.table) {
       table.push({
         field: value.value,
-        title: value.label
+        title: value.label,
+        formatter: urlFormatter
       });
       $.each(value.table, function(key, val) {
         if (table[index+1]) {
@@ -722,6 +723,7 @@ function urlFormatter (value, row, index) {
   if (typeof value == "string" && (value.indexOf("http") === 0 || value.indexOf("https") === 0)) {
     return "<a href='"+value+"' target='_blank'>"+value+"</a>";
   }
+  else {return value;}
 }
 
 function buildFilters() {
